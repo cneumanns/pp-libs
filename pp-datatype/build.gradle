@@ -1,0 +1,8 @@
+plugins {
+    id 'dev.pp.java-library-conventions'
+}
+
+dependencies {
+    api project ( ':pp-basics' )
+    api project ( ':pp-text' )
+}

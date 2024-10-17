@@ -1,0 +1,37 @@
+plugins {
+    id 'dev.pp.java-library-conventions'
+}
+
+dependencies {
+    api project(':pp-basics')
+    api project(':pp-text')
+
+    // testCompileOnly group: 'org.graalvm.js', name: 'js', version: '22.3.1'
+
+    // implementation group: 'org.graalvm.js', name: 'js', version: '23.0.1'
+    implementation group: 'org.graalvm.polyglot', name: 'polyglot', version: '23.1.0'
+    implementation group: 'org.graalvm.polyglot', name: 'js', version: '23.1.0'
+
+    // Not needed
+    // implementation group: 'org.graalvm.truffle', name: 'truffle-api', version: '22.1.0'
+
+    // Needed only if the standard Java script API is used
+    // implementation group: 'org.graalvm.js', name: 'js-scriptengine', version: '22.1.0'
+
+    /*
+    // support for Javascript
+    boolean buildGraalVMNativeImage = false;
+
+    System.out.println();
+    System.out.println ( "buildGraalVMNativeImage (pp-scripting's build.gradle) = " + buildGraalVMNativeImage );
+    System.out.println();
+
+    if ( buildGraalVMNativeImage ) {
+        // GraalVM native image uses it's own Javascript implementation,
+        // therefore don't use the dependency in the distribution 
+        testCompileOnly group: 'org.graalvm.js', name: 'js', version: '22.1.0'
+    } else {
+        implementation  group: 'org.graalvm.js', name: 'js', version: '22.1.0'
+    }
+    */
+}
